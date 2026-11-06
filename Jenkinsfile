@@ -26,18 +26,15 @@ pipeline{
                 withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS_cred']]){
                 bat "terraaform plan"
             }
-        }
-        }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
+            }
         }
     }
+        post{
+            success{
+                echo 'successfull'
+            }
+            failure{
+                echo 'failure'
+            }
         }
     }
