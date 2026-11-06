@@ -24,7 +24,7 @@ pipeline{
         stage("d"){
             steps{
                 withCredentials([[ $class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS_cred']]){
-                bat "terraaform plan"
+                bat "terraform plan"
             }
             }
         }
